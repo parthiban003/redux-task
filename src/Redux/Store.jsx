@@ -1,27 +1,11 @@
-import { configureStore, createSlice } from '@reduxjs/toolkit';
+import { createStore, applyMiddleware } from 'redux';
+import createSagaMiddleware from 'redux-saga';
+import { rootReducer } from './Reducers';
+import rootSaga from './Sagas';
 
-const formSlice = createSlice({
-  name: 'form',
-  initialState: {
-    name: '',
-    email: '',
-  },
-  reducers: {
-    submitForm: (state, action) => {
-      const { name, email } = action.payload;
-      state.name = name;
-      state.email = email;
-      console.log("Submitted Data:", { name, email }); // Show in console
-    },
-  },
-});
+const sagaMiddleware = createSagaMiddleware();
+const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
 
-export const { submitForm } = formSlice.actions;
-
-const store = configureStore({
-  reducer: {
-    form: formSlice.reducer,
-  },
-});
+sagaMiddleware.run(rootSaga);
 
 export default store;
