@@ -19,9 +19,9 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
     position: absolute;
     overflow: hidden;
-    width: 800px;
+    width: 900px;
     top: 8%;
-    left: 10%;
+    left: 17%;
     max-width: 100%;
     min-height: 550px;
 }
@@ -72,7 +72,7 @@ input::-webkit-outer-spin-button {
 
 .gender {
     max-width: 100%;
-    min-width: 330px;
+    min-width: 250px;
     border-radius: 50px;
 }
 

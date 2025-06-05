@@ -89,7 +89,7 @@ const Form = () => {
             <button className="hidden" onClick={handleLoginClick}>Sign In</button>
           </div>
           <div className="toggle-panel toggle-right">
-            <h1>Hello, Friend!</h1>
+            <h1>Hello, User!</h1>
             <p>Register with your personal details to use all of site features</p>
             <button className="hidden" onClick={handleRegisterClick}>Register</button>
           </div>
